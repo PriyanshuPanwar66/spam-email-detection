@@ -1,0 +1,17 @@
+Loan_ID,Gender,Married,Dependents,Education,Self_Employed,ApplicantIncome,CoapplicantIncome,LoanAmount,Loan_Amount_Term,Credit_History,Property_Area,Age,Loan_Status
+LP001015,Male,Yes,0,Graduate,No,5720,0,110.0,360.0,1.0,Urban,36,1
+LP001022,Male,Yes,1,Graduate,No,3076,1500,126.0,360.0,1.0,Urban,28,1
+LP001031,Male,Yes,2,Graduate,No,5000,1800,208.0,360.0,1.0,Urban,42,1
+LP001035,Male,Yes,2,Graduate,No,2340,2546,100.0,360.0,,Urban,32,0
+LP001051,Male,No,0,Not Graduate,No,3276,0,78.0,360.0,1.0,Urban,29,1
+LP001054,Male,Yes,0,Not Graduate,Yes,2165,3422,152.0,360.0,1.0,Urban,31,1
+LP001055,Female,No,1,Not Graduate,No,2226,0,59.0,360.0,1.0,Semiurban,34,1
+LP001056,Male,Yes,2,Not Graduate,No,3881,0,147.0,360.0,0.0,Rural,27,0
+LP001059,Male,Yes,2,Graduate,,13633,0,280.0,240.0,1.0,Urban,50,1
+LP001067,Male,No,0,Not Graduate,No,2400,2400,123.0,360.0,1.0,Semiurban,32,1
+LP001078,Male,No,0,Not Graduate,No,3091,0,90.0,360.0,1.0,Urban,29,1
+LP001082,Male,Yes,1,Graduate,,2185,1516,162.0,360.0,1.0,Semiurban,28,1
+LP001083,Male,No,3+,Graduate,No,4166,0,40.0,180.0,,Urban,37,0
+LP001094,Male,Yes,2,Graduate,,12173,0,166.0,360.0,0.0,Semiurban,42,0
+LP001096,Female,No,0,Graduate,No,4666,0,124.0,360.0,1.0,Semiurban,35,1
+LP001099,Male,No,1,Graduate
