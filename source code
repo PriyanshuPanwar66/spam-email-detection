@@ -1,0 +1,53 @@
+# Spam Email Detection Project
+
+# Step 1: Importing required libraries
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+# Step 2: Load the dataset
+data = pd.read_csv("spam.csv", encoding='latin-1')  # Dataset is often encoded with latin-1 #please use this dataset
+
+# Step 3: Basic data cleaning
+# Drop unnecessary columns
+data = data[['v1', 'v2']]
+data.columns = ['label', 'message']
+
+# Map labels to binary (ham: 0, spam: 1)
+data['label_num'] = data['label'].map({'ham': 0, 'spam': 1})
+
+# Step 4: Preprocessing and splitting data
+X = data['message']
+y = data['label_num']
+
+# Convert text data to numerical vectors using CountVectorizer
+cv = CountVectorizer()
+X_vectorized = cv.fit_transform(X)
+
+# Split into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X_vectorized, y, test_size=0.2, random_state=42)
+
+# Step 5: Train the model
+model = MultinomialNB()
+model.fit(X_train, y_train)
+
+# Step 6: Predictions and Evaluation
+y_pred = model.predict(X_test)
+
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("Classification Report:\n", classification_report(y_test, y_pred))
+
+# Step 7: Test the model with custom input
+def predict_spam(message):
+    vect = cv.transform([message])
+    prediction = model.predict(vect)
+    return "Spam" if prediction[0] == 1 else "Not Spam"
+
+# Example test
+test_message = "Win a free iPhone now!!!"
+print(f"Test message: {test_message}")
+print("Prediction:", predict_spam(test_message))
